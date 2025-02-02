@@ -1,6 +1,7 @@
 package br.com.alexalmeida.gestao_vagas.modules.candidate.controllers;
 
 import br.com.alexalmeida.gestao_vagas.modules.candidate.CandidateEntity;
+import br.com.alexalmeida.gestao_vagas.modules.candidate.DTO.ProfileCanditateResponseDTO;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.useCases.ListAllJobsByFilterUseCase;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.useCases.ProfileCandidateUseCase;
@@ -48,6 +49,15 @@ public class CandidateController {
 
     @GetMapping("/")
     @PreAuthorize("hasRole('CANDIDATE')")
+    @Tag(name="Candidato", description = "Informações do Candidato")
+    @Operation(summary = "Perfil do candidato", description = "Função responsável por buscar informações do candidato.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content( schema = @Schema(implementation = ProfileCanditateResponseDTO.class))
+            }),
+            @ApiResponse(responseCode = "400", description = "User not found.")
+    })
+    @SecurityRequirement(name = "jwt_auth")
     public ResponseEntity<Object> get(HttpServletRequest request){
 
         var idCandidate = request.getAttribute("candidate_id");
