@@ -1,5 +1,6 @@
 package br.com.alexalmeida.gestao_vagas.modules.candidate.useCases;
 
+
 import br.com.alexalmeida.gestao_vagas.exceptions.JobNotFoundException;
 import br.com.alexalmeida.gestao_vagas.exceptions.UserNotFoundException;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.CandidateEntity;
@@ -20,7 +21,6 @@ import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
