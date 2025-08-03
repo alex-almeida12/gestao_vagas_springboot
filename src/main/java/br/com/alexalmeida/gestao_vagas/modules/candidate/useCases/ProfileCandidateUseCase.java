@@ -2,6 +2,8 @@ package br.com.alexalmeida.gestao_vagas.modules.candidate.useCases;
 
 import br.com.alexalmeida.gestao_vagas.modules.candidate.CandidateRepository;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.DTO.ProfileCanditateResponseDTO;
+
+import org.openengsb.core.usermanagement.exceptions.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -16,9 +18,10 @@ public class ProfileCandidateUseCase {
 
     public ProfileCanditateResponseDTO execute(UUID idCanditade){
 
-        var candidate = this.candidateRepository.findById(idCanditade).orElseThrow(()->{
-                    throw new UsernameNotFoundException("User not found");
-                });
+        var candidate = this.candidateRepository.findById(idCandidate)
+        .orElseThrow(() -> {
+          throw new UserNotFoundException();
+        });
 
         var candidateDTO = ProfileCanditateResponseDTO.builder().
                 id(candidate.getId()).

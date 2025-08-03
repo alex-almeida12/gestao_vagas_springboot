@@ -2,13 +2,14 @@ package br.com.alexalmeida.gestao_vagas.modules.candidate.useCases;
 
 
 import br.com.alexalmeida.gestao_vagas.exceptions.JobNotFoundException;
-import br.com.alexalmeida.gestao_vagas.exceptions.UserNotFoundException;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.CandidateEntity;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.CandidateRepository;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.entity.ApplyJobEntity;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.repository.ApplyJobRepository;
 import br.com.alexalmeida.gestao_vagas.modules.company.entities.JobEntity;
 import br.com.alexalmeida.gestao_vagas.modules.company.repositories.JobRepository;
+import br.com.rocketseat.gestao_vagas.exceptions.UserNotFoundException;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
