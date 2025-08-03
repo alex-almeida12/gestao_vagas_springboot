@@ -2,7 +2,6 @@ package br.com.alexalmeida.gestao_vagas.modules.candidate.useCases;
 
 
 import br.com.alexalmeida.gestao_vagas.exceptions.JobNotFoundException;
-import br.com.alexalmeida.gestao_vagas.exceptions.UserNotFoundException;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.CandidateEntity;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.CandidateRepository;
 import br.com.alexalmeida.gestao_vagas.modules.candidate.entity.ApplyJobEntity;
